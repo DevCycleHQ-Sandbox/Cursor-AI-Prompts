@@ -11,6 +11,10 @@ Example Cursor Composer prompt using a `@File` command to refrence the prompt fi
 - `` cleanup `config-to-upload` using instructions: @devcycle-cleanup-variable ``
 - `` cleanup all variables in `DashboardComponents` using instructions: @devcycle-cleanup-variable ``
 
+Example of Cursor's ability to reason through complex code to not only remove the unused variables, but also refactor the code.
+
+![Code Cleanup Example](https://github.com/DevCycleHQ-Sandbox/Cursor-AI-Prompts/blob/main/screenshots/cleanup.png)
+
 ## [Insert Variable Prompt](./devcycle-insert-variable.md)
 
 This prompt will help you insert DevCycle variables into your codebase. To use this prompt, you just need to simply tell Cursor where you would like to insert the variables and what the default value should be, and it will handle the rest. As with all AI code generation / refactoring, you should review the changes and make adjustments as needed.
@@ -19,6 +23,10 @@ Example Cursor Composer prompt using a `@File` command to refrence the prompt fi
 
 - `Add a new feature flag arround the settings button using these instructions: @devcycle-insert-variable`
 - `add a new feature flag arround each button in this component, using these instructions: @devcycle-insert-variable`
+
+Example of Cursor inserting new DevCycle variables into the codebase:
+
+![Code Insert Example](https://github.com/DevCycleHQ-Sandbox/Cursor-AI-Prompts/blob/main/screenshots/insert.png)
 
 ## [Install DevCycle SDK Prompt](./devcycle-install-sdk.md)
 
