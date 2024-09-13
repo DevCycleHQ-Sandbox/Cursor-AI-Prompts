@@ -30,7 +30,7 @@ Example of Cursor inserting new DevCycle variables into the codebase:
 
 ## [Install DevCycle SDK Prompt](./devcycle-install-sdk.md)
 
-This prompt will help you install the DevCycle SDK into your project. To use this prompt, you just need to simply tell Cursor to install the SDK and configure it with your project's details. The prompt will attempt to detect the type of project you're working in and select the appropriate SDK to install. As with all AI code generation / refactoring, you should review the changes and make adjustments as needed.
+This prompt will help you install the DevCycle SDK into your project (only Node.js are supported currently). To use this prompt, you just need to simply tell Cursor to install the SDK and configure it with your project's details. The prompt will attempt to detect the type of project you're working in and select the appropriate SDK to install. As with all AI code generation / refactoring, you should review the changes and make adjustments as needed.
 
 Example Cursor Composer prompt using a `@File` command to refrence the prompt file:
 
