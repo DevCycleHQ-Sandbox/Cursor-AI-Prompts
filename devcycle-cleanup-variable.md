@@ -138,6 +138,6 @@ See the [Typescript Schema](https://raw.githubusercontent.com/DevCycleHQ/js-sdks
 
 - [] For each variable key provided, refactor the code to cleanup the feature flag and make sure you remove all references to the feature flag variables across the codebase (actually remove the code, don't just comment it out). If the feature flag variable has a boolean default value (use the SDK examples above for default value structure) and the default value is `false` you can remove code that depends on the feature flag variable, if the default value is `true` you must keep the code that depends on the feature flag variable and just remove the feature flag variable call, if the default value is something other than a boolean you must replace the feature flag variable call with the exact default value used in each instance. Only remove the user object if it is not used anywhere else in the file.
 
-- [] cleanup any unused imports from the code that was removed or refactored.
+- [] cleanup any unused imports from the code that was removed or refactored. Make sure that all unused imports are removed from each file that was modified.
 
 - [] Verify the feature flag variables are no longer being used in the codebase.
