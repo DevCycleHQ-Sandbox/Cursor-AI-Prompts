@@ -32,4 +32,4 @@ Example Cursor Composer prompt using a `@File` command to refrence the prompt fi
 
 It is also recommended that you can refrence DevCycle's documentation directly from Cursor. To do this, you can use the `@Docs` command in Cursor Composer to search and insert documentation from DevCycle's website. To do this, simply type `@Docs` in a composer or chat windown and select `add new doc` and insert `https://docs.devcycle.com`. Passing in the new `@DevCycle` command will help provide more context to the AI about how to use DevCycle's SDKs.
 
-![Adding DevCycle Docs to Cursor](add-doc.png)
+![Adding DevCycle Docs to Cursor](https://github.com/DevCycleHQ-Sandbox/Cursor-AI-Prompts/blob/main/screenshots/add-doc.png)
