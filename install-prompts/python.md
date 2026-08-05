@@ -34,7 +34,7 @@ Before proceeding, verify using the DevCycle MCP that you have:
 
 - [ ] A DevCycle account and project set up
 - [ ] A Development environment **Server SDK Key** (starts with `dvc_server_`)
-- [ ] Python 3.8+ installed
+- [ ] Python 3.10+ installed
 - [ ] pip or poetry package manager available
 - [ ] The most recent DevCycle Python SDK version available
 
