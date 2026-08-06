@@ -33,7 +33,7 @@ Before proceeding, verify using the DevCycle MCP that you have:
 
 - [ ] A DevCycle account and project set up
 - [ ] A Development environment **Server SDK Key** (starts with `dvc_server_`)
-- [ ] Python 3.8+ installed
+- [ ] Python 3.10+ installed
 - [ ] pip or poetry package manager
 - [ ] The most recent OpenFeature and DevCycle provider versions
 
@@ -82,7 +82,7 @@ Before proceeding, verify using the DevCycle MCP that you have:
 pip install openfeature-sdk devcycle-python-server-sdk
 
 # Using poetry
-poetry add openfeature-sdk devcycle-openfeature-provider
+poetry add openfeature-sdk devcycle-python-server-sdk
 ```
 
 ### Step 2: Initialize OpenFeature with DevCycle Provider
@@ -105,7 +105,11 @@ def initialize_feature_flags():
 
     options = DevCycleLocalOptions()
     devcycle_client = DevCycleLocalClient(sdk_key, options)
-    api.set_provider(devcycle_client.get_openfeature_provider())
+
+    # set_provider_and_wait blocks until the provider is ready and raises if the
+    # DevCycle client fails to initialize. set_provider would return immediately and
+    # evaluations would fall back to default values until the provider became ready.
+    api.set_provider_and_wait(devcycle_client.get_openfeature_provider())
 
     # get the OpenFeature client
     open_feature_client = api.get_client()
@@ -178,7 +182,7 @@ Installation is complete when ALL of the following are true:
 ## Common Installation Scenarios
 
 <example scenario="flask_app">
-**Scenario:** Flask application, Python 3.9, pip
+**Scenario:** Flask application, Python 3.11, pip
 **Actions taken:**
 1. ✅ Created .env with server SDK key
 2. ✅ Installed packages via pip
@@ -189,7 +193,7 @@ Installation is complete when ALL of the following are true:
 </example>
 
 <example scenario="django_service">
-**Scenario:** Django REST API, Python 3.8, poetry
+**Scenario:** Django REST API, Python 3.12, poetry
 **Actions taken:**
 1. ✅ Added SDK key to Django settings
 2. ✅ Installed packages via poetry
@@ -211,7 +215,7 @@ Installation is complete when ALL of the following are true:
 3. Check: Is targeting_key provided in context?
 </diagnosis>
 <solution>
-- Call api.set_provider() before getting client
+- Call api.set_provider_and_wait() before getting client, so initialization failures raise instead of returning defaults
 - Verify server SDK key (starts with dvc_server_)
 - Always include targeting_key in EvaluationContext
 </solution>
@@ -221,7 +225,7 @@ Installation is complete when ALL of the following are true:
 <symptom>Module import failures</symptom>
 <diagnosis>
 1. Check: Are packages installed correctly?
-2. Check: Is Python version 3.8+?
+2. Check: Is Python version 3.10+?
 3. Check: Are there dependency conflicts?
 </diagnosis>
 <solution>
